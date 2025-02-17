@@ -2,7 +2,8 @@ public class Policy
 {
    private int policyNumber;
    private String providerName; 
-   private String policyHolderName;
+   private String holderFirstName;
+   private String holderLastName;
    private int holdersAge;
    private String smokingStatus;
    private int height;
@@ -12,18 +13,20 @@ public Policy()
 {
  policyNumber = 0;
  providerName = "";
- policyHolderName = "";
+ holderFirstName = "";
+ holderLastName = ""; 
  holdersAge = 0;
  smokingStatus = "";
  height = 0;
  weight = 0;
 
 }
-public Policy(int number, String provider, String holderName, int age, String smokeStatus, int h, double w)
+public Policy(int number, String provider, String firstName, String lastName, int age, String smokeStatus, int h, double w)
 {
  policyNumber = number;
  providerName = provider; 
- policyHolderName = holderName; 
+ holderFirstName = firstName; 
+ holderLastName = lastName;
  holdersAge = age;
  smokingStatus = smokeStatus;
  height = h;
@@ -45,12 +48,22 @@ public void setProviderName(String provider)
    
    }
 
-public void setPolicyHolder(String holderName) 
+public void setholderFirstName(String firstName) 
    {
    
-     policyHolderName = holderName;
+     holderFirstName = firstName;
    
    }
+   
+  
+public void setholderLastName(String lastName) 
+   {
+   
+     holderLastName = lastName;
+   
+   }
+
+
 
 public void setHolderAge(int age) 
    {
@@ -94,12 +107,20 @@ public String getProviderName()
    
    } 
 
-public String getPolicyHolder()
+public String getHolderFirstName()
    {
    
-     return policyHolderName; 
+     return holderFirstName; 
    
    } 
+   
+public String getHolderLasttName()
+   {
+   
+     return holderLastName; 
+   
+   } 
+
    
 public int getHolderAge()
    {
