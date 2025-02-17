@@ -6,7 +6,7 @@ public class Policy
    private String holderLastName;
    private int holdersAge;
    private String smokingStatus;
-   private int height;
+   private double height;
    private double weight; 
 
 public Policy()
@@ -21,7 +21,7 @@ public Policy()
  weight = 0;
 
 }
-public Policy(int number, String provider, String firstName, String lastName, int age, String smokeStatus, int h, double w)
+public Policy(int number, String provider, String firstName, String lastName, int age, String smokeStatus, double h, double w)
 {
  policyNumber = number;
  providerName = provider; 
@@ -48,7 +48,7 @@ public void setProviderName(String provider)
    
    }
 
-public void setholderFirstName(String firstName) 
+public void setHolderFirstName(String firstName) 
    {
    
      holderFirstName = firstName;
@@ -56,7 +56,7 @@ public void setholderFirstName(String firstName)
    }
    
   
-public void setholderLastName(String lastName) 
+public void setHolderLastName(String lastName) 
    {
    
      holderLastName = lastName;
@@ -79,7 +79,7 @@ public void setSmokingStatus(String smokeStatus)
    
    }
    
-public void setHeight(int h) 
+public void setHeight(double h) 
    {
    
       height = h;
@@ -114,7 +114,7 @@ public String getHolderFirstName()
    
    } 
    
-public String getHolderLasttName()
+public String getHolderLastName()
    {
    
      return holderLastName; 
@@ -131,12 +131,12 @@ public int getHolderAge()
 
 public String getSmokingStatus()
    {
-   
+     
      return smokingStatus; 
    
    } 
 
-public int getHeight() 
+public double getHeight() 
    {
    
      return height;
@@ -160,27 +160,23 @@ return (getWeight() * 703) / ( getHeight() * getHeight() );
 
 public double getPolicyPrice()
 {
- final double BASE_FEE = 600;
- double additionalFee = 0;
- double total = 0;
-  
+ double policyPrice = 600;
+ 
   if(getHolderAge() > 50)
   {
-   additionalFee = 75;
-   total = BASE_FEE + additionalFee; 
+    policyPrice += 75; 
   }
-  if(getSmokingStatus().equalsIgnoreCase("Yes")  )
+  if(getSmokingStatus().equalsIgnoreCase("smoker")  )
   {
-   additionalFee = 100;
-   total = BASE_FEE + additionalFee; 
+    policyPrice += 100;
   }
- if(getBMI() > 35 )
+  if(getBMI() > 35 )
   {
-   additionalFee = ( (getBMI() - 35) * 20 );
-   total = BASE_FEE + additionalFee; 
+   double bmiFee = ( (getBMI() - 35) * 20 );
+   policyPrice += bmiFee; 
   }
 
- return total;
+ return policyPrice;
 }
 
 
