@@ -48,18 +48,29 @@ public class policyDemo
     height = inputFile.nextInt();  
     weight = inputFile.nextInt() ;
     
-   
+    policy.setPolicyNumber(policyNumber);
+    policy.setProviderName(providerName);
+    policy.setHolderFirstName(firstName);
+    policy.setHolderLastName(lastName);
+    policy.setHolderAge(age);
+    policy.setSmokingStatus(smokeStatus);
+    policy.setHeight(height);
+    policy.setWeight(weight);
     
-           
-      System.out.println(policyNumber);
-      System.out.println(providerName);
-      System.out.println(firstName);
-      System.out.println(lastName);
-      System.out.println(age);
-      System.out.println(smokeStatus);
-      System.out.println(height);
-      System.out.println(weight);
-
+     System.out.println();     
+     System.out.println("Policy Number: " + policy.getPolicyNumber() );
+     System.out.println("Provider Name: " + policy.getProviderName() );
+     System.out.println("Policyholder's first name: " + policy.getHolderFirstName() );
+     System.out.println("Policyholder's last name: " + policy.getHolderLastName() );
+     System.out.println("Policyholder's Age: " + policy.getHolderAge() );
+     System.out.println("Policyholder's smoking status: " + policy.getSmokingStatus() );
+     System.out.println("Policyholder's Height (in inches) : " + policy.getHeight() );
+     System.out.println("Policyholder's Weight (in pounds) : " + policy.getWeight() );
+     System.out.printf("Policyholder's BMI : %.2f " , policy.getBMI() );
+     System.out.println();
+     System.out.printf("Policy Price : $%.2f" , policy.getPolicyPrice() );
+     System.out.println();
+     
       if(smokeStatus.equalsIgnoreCase("smoker"))
       {
         totalSmokers++;
@@ -75,7 +86,7 @@ public class policyDemo
      
        
    }
-    System.out.println("The number of policies with a smoker is : " + totalSmokers);
+    System.out.println("\nThe number of policies with a smoker is : " + totalSmokers);
     System.out.println("The number of policies with a non-smoker is: " + totalNonSmokers);
    
    //close file 
