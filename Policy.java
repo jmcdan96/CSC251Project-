@@ -3,6 +3,7 @@ public class Policy
    private int policyNumber;
    private String providerName; 
    private PolicyHolder holder; 
+   private static int numOfPolicies;
    
 public Policy()
 {
@@ -15,7 +16,7 @@ public Policy(int policyNumber , String providerName , PolicyHolder holder)
  this.policyNumber = policyNumber;
  this.providerName = providerName;
  this.holder = holder; 
- 
+ numOfPolicies++; 
 
 }
 //setPolicyNumber method that sets the Policy Number of the person 
@@ -102,5 +103,14 @@ public String toString()
  return output; 
 
 }
+
+//numOfPolicies
+ public static int numOfPolicies()
+ {
+   
+   return numOfPolicies; 
+   
+      
+ }
 
 }
