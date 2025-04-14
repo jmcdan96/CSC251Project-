@@ -177,10 +177,9 @@ public String toString()
  output += "Policy Holder's First Name : " + firstName + 
           "\nPolicy Holder's Last Name : " + lastName + 
           "\nPolicyholder's age : " + Age + 
-          "\nPolicyholder's Smoking Status(Y/N) : " + getSmokingStatus() + 
+          "\nPolicyholder's Smoking Status(Y/N) : " + smokingStatus + 
           "\nPolicyholder's height " + height + 
-          "\nPolicyholder's weight " + weight + 
-          String.format("\nPolicyholer's BMI %.2f" ,  getBMI() ) + "";  
+          "\nPolicyholder's weight " + weight;  
            
           
           

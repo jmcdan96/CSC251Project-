@@ -31,18 +31,19 @@ public class policyDemo
   
    while(inputFile.hasNext() )  
    {
-      //Add policy Information  
+      //Add policy Information 
+               
       policyNumber = inputFile.nextInt();
       inputFile.nextLine(); 
       providerName = inputFile.nextLine(); 
       firstName = inputFile.nextLine(); 
       lastName = inputFile.nextLine(); 
       age = inputFile.nextInt(); 
-      smokeStatus = inputFile.nextLine();
       inputFile.nextLine();  
-      height = inputFile.nextInt(); 
+      smokeStatus = inputFile.nextLine();
+      height = inputFile.nextInt();
       weight = inputFile.nextInt(); 
-      
+  
       
       if(inputFile.hasNext())
             inputFile.nextLine();
@@ -58,27 +59,22 @@ public class policyDemo
        //add value to policy object 
        policy.add(policies); 
        
-      
-      
+       //Number of Smokers
+       if(policies.getPolicyHolder().getSmokingStatus().equalsIgnoreCase("smoker"))
+        totalSmokers++; 
+        if(policies.getPolicyHolder().getSmokingStatus().equalsIgnoreCase("non-smoker"))
+         totalNonSmokers++; 
      }           
      
-     for(int i = 0; i < policy.size(); i++)
-     {
-      System.out.println(policy);
-      System.out.println();  
-      
-       //Number of Smokers
-       if(smokeStatus.equalsIgnoreCase("smoker"))
-        totalSmokers++; 
-        else
-         totalNonSmokers++;
-     
-     }
+         System.out.println(policy);
+         System.out.println();  
+        
+    
      
      //Display Information
      System.out.println("There were " + Policy.numOfPolicies() + " Policy objects created. "); 
      System.out.println("The number of policies with a smoker " + totalSmokers); 
-     System.out.println("The number of policies with a non-smoker " + totalNonSmokers); 
+     System.out.println("The number of policies with a non-smoker " + totalNonSmokers ); 
         
 
    

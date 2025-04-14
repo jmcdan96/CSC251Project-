@@ -95,8 +95,8 @@ public String toString()
 {
  String output = ""; 
  
- output = "Policy Number : " + policyNumber + "\nProvider Name : " + providerName 
- + "\n" + holder.toString() + "\n$" + getPolicyPrice() + "\n"; 
+ output = "\nPolicy Number : " + policyNumber + "\nProvider Name : " + providerName 
+ + "\n" + holder.toString() + "\n$" + getPolicyPrice(); 
 
  return output; 
 
