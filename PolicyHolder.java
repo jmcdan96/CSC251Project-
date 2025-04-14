@@ -179,7 +179,8 @@ public String toString()
           "\nPolicyholder's age : " + Age + 
           "\nPolicyholder's Smoking Status(Y/N) : " + smokingStatus + 
           "\nPolicyholder's height " + height + 
-          "\nPolicyholder's weight " + weight;  
+          "\nPolicyholder's weight " + weight +  
+          "\nBMI " + getBMI();  
            
           
           
