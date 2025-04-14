@@ -15,8 +15,9 @@ public Policy(int policyNumber , String providerName , PolicyHolder holder)
 {
  this.policyNumber = policyNumber;
  this.providerName = providerName;
- this.holder = holder; 
- numOfPolicies++; 
+ this.holder = new PolicyHolder(holder); 
+ numOfPolicies++;
+ 
 
 }
 //setPolicyNumber method that sets the Policy Number of the person 
@@ -40,7 +41,6 @@ public void setProviderName(String provider)
    
 //getPolicyNumber Method that returns the policy number of the holder 
 //@return the policy number
-
 public int getPolicyNumber()
    {
    
@@ -56,19 +56,16 @@ public String getProviderName()
    
      return providerName; 
    
-   } 
-   
-//getBMI Method that returns the holder's BMI 
-//@return the holder's BMI
+   }   
 
-public double getBMI()
+//PolicyHolder method 
+public PolicyHolder getPolicyHolder() 
 {
 
+ return holder;  
 
-return (holder.getWeight() * 703) / ( holder.getHeight() * holder.getHeight() ); 
 
 }
-
 //getPrice Method that returns the holder's total policy price
 //@return the total price of the price
 
@@ -80,13 +77,13 @@ public double getPolicyPrice()
   {
     policyPrice += 75; 
   }
-  if(holder.getSmokingStatus().equalsIgnoreCase("smoker")  )
+  else if(holder.getSmokingStatus().equalsIgnoreCase("smoker")  )
   {
     policyPrice += 100;
   }
-  if(getBMI() > 35 )
+  else if(holder.getBMI() > 35 )
   {
-   double bmiFee = ( (getBMI() - 35) * 20 );
+   double bmiFee = ( (holder.getBMI() - 35) * 20 );
    policyPrice += bmiFee; 
   }
 
@@ -98,7 +95,8 @@ public String toString()
 {
  String output = ""; 
  
- output = "The policy number is " + policyNumber + " the provider name is " + providerName; 
+ output = "Policy Number : " + policyNumber + "\nProvider Name : " + providerName 
+ + "\n" + holder.toString() + "\n$" + getPolicyPrice(); 
 
  return output; 
 

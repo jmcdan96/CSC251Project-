@@ -1,19 +1,56 @@
 public class PolicyHolder 
 {
-   private String holderFirstName;
-   private String holderLastName;
-   private int holdersAge;
+   private String firstName;
+   private String lastName;
+   private int Age;
    private String smokingStatus;
    private double height;
    private double weight; 
    
-   
+
+//no-arg Constructor
+public PolicyHolder()
+{
+   firstName = "";
+   lastName = "";
+   Age = 0;
+   smokingStatus = "";
+   height = 0;
+   weight = 0; 
+
+}
+//Constructor
+public PolicyHolder(String firstName, String lastName, int Age , String smokingStatus , double height , double weight)
+{
+
+ this.firstName = firstName;
+ this.lastName = lastName;
+ this.Age = Age;
+ this.smokingStatus = smokingStatus;
+ this.height = height;
+ this.weight = weight; 
+
+}
+
+//Copy of PolicyHolder Object 
+public PolicyHolder(PolicyHolder object2)
+{
+ this.firstName = object2.firstName; 
+ this.lastName = object2.lastName; 
+ this.Age = object2.Age; 
+ this.smokingStatus = object2.smokingStatus; 
+ this.height = object2.height;
+ this.weight = object2.weight; 
+
+
+
+}
 //Setter Method that sets the first name of the policy holder
 //@param the Policy Holder's First Name 
 public void setHolderFirstName(String firstName) 
    {
    
-     holderFirstName = firstName;
+     this.firstName = firstName;
    
    }
    
@@ -23,7 +60,7 @@ public void setHolderFirstName(String firstName)
 public void setHolderLastName(String lastName) 
    {
    
-     holderLastName = lastName;
+     this.lastName = lastName;
    
    }
 
@@ -33,25 +70,25 @@ public void setHolderLastName(String lastName)
 public void setHolderAge(int age) 
    {
    
-      holdersAge = age;
+      this.Age = Age;
    
    }
 //Setter Method that sets the smoking status of the policy holder
 //@param the Policy Holder's smoking status
   
-public void setSmokingStatus(String smokeStatus) 
+public void setSmokingStatus(String smokingStatus) 
    {
    
-      smokingStatus = smokeStatus;
+      this.smokingStatus = smokingStatus;
    
    }
 //Setter Method that sets the height of the policy holder
 //@param the Policy Holder's Height
   
-public void setHeight(double h) 
+public void setHeight(double height) 
    {
    
-      height = h;
+      this.height = height;
    
    }
    
@@ -61,7 +98,7 @@ public void setHeight(double h)
 public void setWeight(double w) 
    {
    
-      weight = w;
+      this.weight = weight;
    
    }
 
@@ -71,7 +108,7 @@ public void setWeight(double w)
 public String getHolderFirstName()
    {
    
-     return holderFirstName; 
+     return firstName; 
    
    } 
 //getHolderLastName Method that returns the last name of the holder 
@@ -80,7 +117,7 @@ public String getHolderFirstName()
 public String getHolderLastName()
    {
    
-     return holderLastName; 
+     return lastName; 
    
    } 
 //getHolderAge Method that returns the holder's age 
@@ -89,16 +126,16 @@ public String getHolderLastName()
 public int getHolderAge()
    {
    
-     return holdersAge; 
+     return Age; 
    
    } 
 //getSmokingStatus Method that returns the holder's smoking status 
 //@return the holder's smoking status 
 
 public String getSmokingStatus()
-   {
-     
-     return smokingStatus; 
+   {  
+        
+       return smokingStatus; 
    
    } 
 //getHeight Method that returns the holder's height
@@ -119,6 +156,17 @@ public double getWeight()
      return weight; 
    
    } 
+   
+//getBMI Method that returns the holder's BMI 
+//@return the holder's BMI
+
+public double getBMI()
+{
+
+
+return (getWeight() * 703) / (getHeight() * getHeight() ); 
+
+}
 
 
 //toString method 
@@ -126,11 +174,16 @@ public String toString()
 {
  String output = "";
  
- output = "The policy holder's name is " +  holderFirstName + " " +  holderLastName + " they are " + holdersAge + 
- " years old. " + " smoking status is " + smokingStatus + " they are " + height + " inches tall " + " and weigh " + 
- weight; 
+ output += "Policy Holder's First Name : " + firstName + 
+          "\nPolicy Holder's Last Name : " + lastName + 
+          "\nPolicyholder's age : " + Age + 
+          "\nPolicyholder's Smoking Status(Y/N) : " + getSmokingStatus() + 
+          "\nPolicyholder's height " + height + 
+          "\nPolicyholder's weight " + weight + 
+          String.format("\nPolicyholer's BMI %.2f" ,  getBMI() ); 
  
- return output;
+ 
+  return output;
 
 
 }
