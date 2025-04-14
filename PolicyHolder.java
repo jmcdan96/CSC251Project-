@@ -180,7 +180,10 @@ public String toString()
           "\nPolicyholder's Smoking Status(Y/N) : " + getSmokingStatus() + 
           "\nPolicyholder's height " + height + 
           "\nPolicyholder's weight " + weight + 
-          String.format("\nPolicyholer's BMI %.2f" ,  getBMI() ); 
+          String.format("\nPolicyholer's BMI %.2f" ,  getBMI() ) + "";  
+           
+          
+          
  
  
   return output;
